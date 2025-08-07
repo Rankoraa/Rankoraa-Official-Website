@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Card, CardContent } from '@/components/ui/card'
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 
@@ -10,7 +9,7 @@ const testimonials = [
     name: 'Sarah Johnson',
     company: 'TechStart Inc.',
     role: 'CEO',
-    content: 'Lovable transformed our online presence completely. The website they built not only looks stunning but has increased our conversions by 150%. Their attention to detail and professionalism is unmatched.',
+    content: 'Rankoraa transformed our online presence completely. The website they built not only looks stunning but has increased our conversions by 150%. Their attention to detail and professionalism is unmatched.',
     avatar: '/professional-woman-headshot.png',
     rating: 5
   },
@@ -18,7 +17,7 @@ const testimonials = [
     name: 'Michael Chen',
     company: 'E-Commerce Plus',
     role: 'Founder',
-    content: 'Working with Lovable was a game-changer for our business. They delivered a WooCommerce site that handles our high traffic seamlessly. The team is responsive, creative, and truly understands business needs.',
+    content: 'Working with Rankoraa was a game-changer for our business. They delivered a WooCommerce site that handles our high traffic seamlessly. The team is responsive, creative, and truly understands business needs.',
     avatar: '/professional-man-headshot.png',
     rating: 5
   },
@@ -26,7 +25,7 @@ const testimonials = [
     name: 'Emily Rodriguez',
     company: 'Creative Studio',
     role: 'Creative Director',
-    content: 'The custom website Lovable created for us perfectly captures our brand essence. Every interaction feels smooth and engaging. Our clients constantly compliment us on our web presence.',
+    content: 'The custom website Rankoraa created for us perfectly captures our brand essence. Every interaction feels smooth and engaging. Our clients constantly compliment us on our web presence.',
     avatar: '/creative-professional-woman.png',
     rating: 5
   }
@@ -34,62 +33,101 @@ const testimonials = [
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isAnimating, setIsAnimating] = useState(false)
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
-    }, 5000)
+      handleNext()
+    }, 6000)
     return () => clearInterval(timer)
   }, [])
 
-  const nextTestimonial = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
+  const handleNext = () => {
+    if (isAnimating) return
+    setIsAnimating(true)
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
+      setIsAnimating(false)
+    }, 300)
   }
 
-  const prevTestimonial = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length)
+  const handlePrev = () => {
+    if (isAnimating) return
+    setIsAnimating(true)
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length)
+      setIsAnimating(false)
+    }, 300)
+  }
+
+  const handleDotClick = (index: number) => {
+    if (isAnimating || index === currentIndex) return
+    setIsAnimating(true)
+    setTimeout(() => {
+      setCurrentIndex(index)
+      setIsAnimating(false)
+    }, 300)
   }
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+    <section className="py-8 sm:py-10 md:py-12 lg:py-16 relative overflow-hidden bg-transparent">
+      {/* Animated background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-28 h-28 sm:w-32 sm:h-32 bg-gradient-to-r from-purple-300 to-pink-300 rounded-full opacity-20 animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-r from-blue-300 to-purple-300 rounded-full opacity-15 animate-float" style={{ animationDelay: '3s' }}></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             What Our <span className="text-shimmer">Clients</span> Say
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
             Don't just take our word for it. Here's what our amazing clients have to say about working with us.
           </p>
         </div>
 
-        <div className="relative max-w-4xl mx-auto">
-          <div className="neomorphic rounded-3xl hover-glow">
-            <div className="p-8 md:p-12">
+        <div className="relative max-w-5xl mx-auto">
+          {/* Main testimonial card with glassmorphism */}
+          <div className={`glass-morphism rounded-3xl backdrop-blur-xl border border-white/20 shadow-2xl transition-all duration-500 ${isAnimating ? 'animate-drop-out' : 'animate-drop-in'}`}>
+            <div className="p-6 sm:p-8 md:p-12">
               <div className="text-center">
-                <div className="flex justify-center mb-6">
+                {/* Animated stars */}
+                <div className="flex justify-center mb-6 sm:mb-8">
                   {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                    <Star key={i} className="w-6 h-6 text-yellow-400 fill-current animate-pulse-glow" style={{ animationDelay: `${i * 100}ms` }} />
+                    <Star 
+                      key={i} 
+                      className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-yellow-400 fill-current animate-bounce-in mx-1" 
+                      style={{ animationDelay: `${i * 150}ms` }} 
+                    />
                   ))}
                 </div>
                 
-                <blockquote className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed animate-fade-in">
-                  "{testimonials[currentIndex].content}"
+                {/* Quote */}
+                <blockquote className={`text-lg sm:text-xl md:text-2xl text-gray-800 mb-6 sm:mb-8 md:mb-10 leading-relaxed font-medium transition-all duration-500 ${isAnimating ? 'opacity-0 transform translate-y-8' : 'opacity-100 transform translate-y-0'}`}>
+                  {`"${testimonials[currentIndex].content}"`}
                 </blockquote>
                 
-                <div className="flex items-center justify-center space-x-4 animate-scale-in">
-                  <div className="neomorphic-inset rounded-full p-1">
+                {/* Author */}
+                <div className={`flex items-center justify-center space-x-4 sm:space-x-6 transition-all duration-700 ${isAnimating ? 'opacity-0 transform translate-y-12' : 'opacity-100 transform translate-y-0'}`}>
+                  <div className="glass-morphism rounded-full p-1 border border-white/30">
                     <Image
                       src={testimonials[currentIndex].avatar || "/placeholder.svg"}
                       alt={testimonials[currentIndex].name}
-                      width={60}
-                      height={60}
-                      className="rounded-full"
+                      width={64}
+                      height={64}
+                      className="rounded-full sm:w-[72px] sm:h-[72px] md:w-[80px] md:h-[80px]"
                     />
                   </div>
                   <div className="text-left">
-                    <div className="font-semibold text-lg">{testimonials[currentIndex].name}</div>
-                    <div className="text-gray-600">
-                      {testimonials[currentIndex].role} at {testimonials[currentIndex].company}
+                    <div className="font-bold text-base sm:text-lg md:text-xl text-gray-800">
+                      {testimonials[currentIndex].name}
+                    </div>
+                    <div className="text-purple-600 font-semibold text-sm sm:text-base">
+                      {testimonials[currentIndex].role}
+                    </div>
+                    <div className="text-gray-600 text-xs sm:text-sm">
+                      {testimonials[currentIndex].company}
                     </div>
                   </div>
                 </div>
@@ -97,31 +135,35 @@ export default function Testimonials() {
             </div>
           </div>
 
-          {/* Navigation buttons */}
+          {/* Navigation buttons: hidden on tablets and mobiles (show only on lg+) */}
           <button
-            onClick={prevTestimonial}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 neomorphic-button p-4 rounded-full hover-glow hover-lift transition-all duration-300"
+            onClick={handlePrev}
+            disabled={isAnimating}
+            className="hidden lg:flex absolute left-4 top-1/2 -translate-y-1/2 glass-morphism p-4 rounded-full hover-glow hover-lift transition-all duration-300 border border-white/20 disabled:opacity-50"
           >
             <ChevronLeft className="w-6 h-6 text-purple-600" />
           </button>
           <button
-            onClick={nextTestimonial}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 neomorphic-button p-4 rounded-full hover-glow hover-lift transition-all duration-300"
+            onClick={handleNext}
+            disabled={isAnimating}
+            className="hidden lg:flex absolute right-4 top-1/2 -translate-y-1/2 glass-morphism p-4 rounded-full hover-glow hover-lift transition-all duration-300 border border-white/20 disabled:opacity-50"
           >
             <ChevronRight className="w-6 h-6 text-purple-600" />
           </button>
 
           {/* Dots indicator */}
-          <div className="flex justify-center mt-8 space-x-2">
+          <div className="flex justify-center mt-6 sm:mt-8 space-x-2 sm:space-x-3">
             {testimonials.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-4 h-4 rounded-full transition-all duration-300 ${
+                onClick={() => handleDotClick(index)}
+                disabled={isAnimating}
+                className={`transition-all duration-500 rounded-full border-2 ${
                   index === currentIndex 
-                    ? 'neomorphic-button bg-gradient-to-r from-purple-400 to-pink-400 scale-125 animate-pulse-glow' 
-                    : 'neomorphic-inset hover:scale-110'
+                    ? 'w-10 sm:w-12 h-3 sm:h-4 bg-gradient-to-r from-purple-500 to-pink-500 border-purple-400 animate-pulse-glow' 
+                    : 'w-3 sm:w-4 h-3 sm:h-4 glass-morphism border-white/30 hover:scale-125 hover:border-purple-300'
                 }`}
+                aria-label={`Show testimonial ${index + 1}`}
               />
             ))}
           </div>

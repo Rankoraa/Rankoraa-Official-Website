@@ -1,6 +1,6 @@
 import Hero from '@/components/sections/Hero'
 import ServicesPreview from '@/components/sections/ServicesPreview'
-import ClientShowcase from '@/components/sections/ClientShowcase'
+import ClientLogoMarquee from '@/components/sections/client-logo-marquee'
 import BlogTeaser from '@/components/sections/BlogTeaser'
 import Testimonials from '@/components/sections/Testimonials'
 import ParallaxWrapper from '@/components/ParallaxWrapper'
@@ -15,7 +15,7 @@ export default function Home() {
         <ServicesPreview />
       </ParallaxWrapper>
       <ParallaxWrapper speed={0.2}>
-        <ClientShowcase />
+        <ClientLogoMarquee />
       </ParallaxWrapper>
       <ParallaxWrapper speed={0.4}>
         <BlogTeaser />

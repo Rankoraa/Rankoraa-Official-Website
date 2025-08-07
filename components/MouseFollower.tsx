@@ -9,27 +9,19 @@ export default function MouseFollower() {
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY })
+
+      const target = e.target as Element | null
+      const hovering =
+        !!target &&
+        typeof (target as Element).closest === 'function' &&
+        !!(target as Element).closest('.hover-glow, .neomorphic-button')
+
+      setIsHovering(hovering)
     }
 
-    const handleMouseEnter = (e: MouseEvent) => {
-      const target = e.target as HTMLElement
-      if (target.classList.contains('hover-glow') || target.classList.contains('neomorphic-button')) {
-        setIsHovering(true)
-      }
-    }
-
-    const handleMouseLeave = () => {
-      setIsHovering(false)
-    }
-
-    window.addEventListener('mousemove', handleMouseMove)
-    document.addEventListener('mouseenter', handleMouseEnter, true)
-    document.addEventListener('mouseleave', handleMouseLeave, true)
-
+    window.addEventListener('mousemove', handleMouseMove, { passive: true })
     return () => {
       window.removeEventListener('mousemove', handleMouseMove)
-      document.removeEventListener('mouseenter', handleMouseEnter, true)
-      document.removeEventListener('mouseleave', handleMouseLeave, true)
     }
   }, [])
 
@@ -41,11 +33,11 @@ export default function MouseFollower() {
       style={{
         left: mousePosition.x - (isHovering ? 24 : 12),
         top: mousePosition.y - (isHovering ? 24 : 12),
-        background: isHovering 
+        background: isHovering
           ? 'radial-gradient(circle, rgba(102, 126, 234, 0.3) 0%, transparent 70%)'
           : 'radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%)',
         borderRadius: '50%',
-        mixBlendMode: 'multiply'
+        mixBlendMode: 'multiply',
       }}
     />
   )

@@ -5,169 +5,92 @@ import Image from 'next/image'
 
 const teamMembers = [
   {
-    name: 'Somil Athole',
-    role: 'Co-Founder & Lead Designer/Developer',
-    bio: 'Full-stack developer with 8+ years of experience building scalable web applications. Passionate about clean code and user experience.',
+    name: 'Alex Thompson',
+    role: 'Founder & Lead Developer',
+    bio: 'Full-stack engineer building fast, SEO-first web applications for ambitious brands.',
     image: '/professional-developer-headshot.png',
     linkedin: '#',
-    twitter: '#'
+    twitter: '#',
   },
   {
-    name: 'Mayank Padhi',
-    role: 'Co-Founder & Lead Developer',
-    bio: 'Creative designer who transforms complex ideas into beautiful, intuitive interfaces. Specializes in user research and design systems.',
+    name: 'Sarah Martinez',
+    role: 'UI/UX Designer',
+    bio: 'Designs bold, conversion-focused interfaces for modern web products.',
     image: '/professional-designer-headshot.png',
     linkedin: '#',
-    twitter: '#'
-  }
-]
-
-const timeline = [
-  {
-    year: '2020',
-    title: 'Company Founded',
-    description: 'Started as a freelance web development service with a focus on small businesses.'
+    twitter: '#',
   },
-  {
-    year: '2021',
-    title: 'Team Expansion',
-    description: 'Grew to a team of 4 specialists covering design, development, and project management.'
-  },
-  {
-    year: '2022',
-    title: '50+ Projects Completed',
-    description: 'Reached a major milestone with over 50 successful projects across various industries.'
-  },
-  {
-    year: '2023',
-    title: 'Award Recognition',
-    description: 'Received "Best Web Development Agency" award from the local business association.'
-  },
-  {
-    year: '2024',
-    title: 'Continued Growth',
-    description: 'Expanding services and building long-term partnerships with amazing clients.'
-  }
+  // Removed 2 cards as requested
 ]
 
 const stats = [
   { icon: Users, number: '50+', label: 'Happy Clients' },
   { icon: Award, number: '100+', label: 'Projects Completed' },
   { icon: Clock, number: '4+', label: 'Years Experience' },
-  { icon: Heart, number: '99%', label: 'Client Satisfaction' }
+  { icon: Heart, number: '99%', label: 'Client Satisfaction' },
+]
+
+const timeline = [
+  { year: '2020', title: 'Company Founded', description: 'Born in Mumbai to help local businesses go digital.' },
+  { year: '2021', title: 'Team Expansion', description: 'Scaled capabilities across dev, design, and SEO.' },
+  { year: '2022', title: '50+ Projects', description: 'Milestone projects across India and beyond.' },
+  { year: '2023', title: 'Recognition', description: 'Trusted by startups and enterprises alike.' },
+  { year: '2024', title: 'Momentum', description: 'Driving growth with performance and SEO-first builds.' },
 ]
 
 export default function AboutPage() {
   return (
     <div className="pt-16">
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
+      {/* Hero */}
+      <section className="py-8 sm:py-10 md:py-12 lg:py-16 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-[#0b0b0f] dark:via-slate-900 dark:to-black">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-4xl mx-auto animate-fade-in-up">
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4" style={{ fontFamily: 'var(--font-display), var(--font-body)' }}>
               About <span className="gradient-text">Rankoraa</span>
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              We're a passionate team of web developers and designers dedicated to creating 
-              beautiful, functional websites that help businesses thrive in the digital world.
+            <p className="text-base sm:text-lg lg:text-xl text-gray-700 dark:text-gray-200 font-semibold">
+              Mumbai’s boutique IT services agency building modern websites with Web Development, Design, and SEO at the core.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Mission & Vision */}
-      <section className="py-20">
+      {/* Team (2 cards centered) */}
+      <section className="pt-8 pb-10 sm:pt-10 sm:pb-12 md:pt-12 md:pb-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="animate-slide-in-left">
-              <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                To empower businesses of all sizes with stunning, high-performance websites that 
-                drive real results. We believe that great web design should be accessible to everyone, 
-                not just large corporations.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Every project we take on is an opportunity to build something amazing and help our 
-                clients achieve their goals. We're not just developers – we're partners in your success.
-              </p>
-            </div>
-            <div className="animate-slide-in-right">
-              <Image
-                src="/team-collaboration-workspace.png"
-                alt="Team collaboration"
-                width={500}
-                height={400}
-                className="rounded-2xl shadow-xl"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div 
-                key={stat.label}
-                className="text-center animate-fade-in-up"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-4">
-                  <stat.icon className="w-8 h-8 text-purple-600" />
-                </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
-                <div className="text-gray-600">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              Meet Our <span className="gradient-text">Team</span>
+          <div className="text-center mb-8 sm:mb-10 md:mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4" style={{ fontFamily: 'var(--font-display), var(--font-body)' }}>
+              Meet Our <span className="text-shimmer">Team</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              The talented individuals behind every successful project. We're passionate about 
-              what we do and love working with amazing clients.
+            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-200 max-w-2xl mx-auto font-semibold">
+              The people behind Rankoraa’s bold builds.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
-              <Card 
-                key={member.name}
-                className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg overflow-hidden animate-fade-in-up"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="relative overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-3xl mx-auto">
+            {teamMembers.map((member) => (
+              <Card key={member.name} className="border-0 shadow-lg overflow-hidden">
+                <div className="relative">
                   <Image
-                    src={member.image || "/placeholder.svg"}
+                    src={member.image || '/placeholder.svg'}
                     alt={member.name}
                     width={300}
                     height={300}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-64 object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-4 left-4 right-4 flex space-x-2">
-                      <a href={member.linkedin} className="bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/30 transition-colors">
-                        <Linkedin className="w-4 h-4 text-white" />
-                      </a>
-                      <a href={member.twitter} className="bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/30 transition-colors">
-                        <Twitter className="w-4 h-4 text-white" />
-                      </a>
-                    </div>
-                  </div>
                 </div>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
-                  <p className="text-purple-600 font-medium mb-3">{member.role}</p>
-                  <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
+                  <h3 className="text-xl sm:text-2xl font-extrabold">{member.name}</h3>
+                  <p className="text-purple-700 dark:text-purple-300 font-bold mb-2">{member.role}</p>
+                  <p className="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-semibold">{member.bio}</p>
+                  <div className="flex gap-3 mt-4">
+                    <a href={member.linkedin} className="text-gray-500 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-300">
+                      <Linkedin className="w-5 h-5" />
+                    </a>
+                    <a href={member.twitter} className="text-gray-500 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-300">
+                      <Twitter className="w-5 h-5" />
+                    </a>
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -175,37 +98,47 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="py-20 bg-gray-50">
+      {/* Stats */}
+      <section className="pt-8 pb-10 sm:pt-10 sm:pb-12 md:pt-12 md:pb-16">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              Our <span className="gradient-text">Journey</span>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="inline-flex items-center justify-center w-14 h-14 bg-purple-100 dark:bg-purple-900/30 rounded-full mb-3">
+                  <stat.icon className="w-7 h-7 text-purple-700 dark:text-purple-300" />
+                </div>
+                <div className="text-3xl font-extrabold text-gray-900 dark:text-gray-100 mb-1">{stat.number}</div>
+                <div className="text-gray-700 dark:text-gray-300 text-sm sm:text-base font-semibold">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Journey */}
+      <section className="pt-8 pb-10 sm:pt-10 sm:pb-12 md:pt-12 md:pb-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4" style={{ fontFamily: 'var(--font-display), var(--font-body)' }}>
+              Our <span className="text-shimmer">Journey</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              From humble beginnings to becoming a trusted web development partner. 
-              Here's how we've grown over the years.
+            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-200 max-w-2xl mx-auto font-semibold">
+              Built in Mumbai. Delivering globally.
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
             <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-purple-200"></div>
-              
-              <div className="space-y-12">
-                {timeline.map((item, index) => (
-                  <div 
-                    key={item.year}
-                    className="relative flex items-start animate-fade-in-up"
-                    style={{ animationDelay: `${index * 200}ms` }}
-                  >
-                    <div className="flex-shrink-0 w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg relative z-10">
+              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-purple-200 dark:bg-purple-900/40"></div>
+              <div className="space-y-8">
+                {timeline.map((item) => (
+                  <div key={item.year} className="relative flex items-start">
+                    <div className="flex-shrink-0 w-16 h-16 bg-purple-700 dark:bg-purple-500 rounded-full flex items-center justify-center text-white font-extrabold text-lg">
                       {item.year}
                     </div>
-                    <div className="ml-8 bg-white p-6 rounded-lg shadow-lg flex-1">
-                      <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                      <p className="text-gray-600">{item.description}</p>
+                    <div className="ml-6 bg-white dark:bg-slate-900 p-6 rounded-lg shadow-lg flex-1">
+                      <h3 className="text-xl font-extrabold">{item.title}</h3>
+                      <p className="text-gray-700 dark:text-gray-200 font-semibold">{item.description}</p>
                     </div>
                   </div>
                 ))}
@@ -215,18 +148,15 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-3xl mx-auto animate-fade-in-up">
-            <h2 className="text-4xl font-bold mb-6">
-              Ready to Work Together?
-            </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              We'd love to hear about your project and discuss how we can help bring your vision to life. 
-              Let's create something amazing together.
+      {/* CTA */}
+      <section className="pt-8 pb-12 sm:pt-10 sm:pb-14 md:pt-12 md:pb-16 text-center">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">Ready to Work Together?</h2>
+            <p className="text-base sm:text-lg lg:text-xl text-gray-700 dark:text-gray-200 mb-6 sm:mb-8 font-semibold">
+              Let’s build something bold with Web Dev, Design, and SEO.
             </p>
-            <Button size="lg" className="gradient-bg text-white hover:opacity-90 transition-all duration-300">
+            <Button className="gradient-bg text-white hover:opacity-90 transition-all duration-300">
               Start Your Project
             </Button>
           </div>
