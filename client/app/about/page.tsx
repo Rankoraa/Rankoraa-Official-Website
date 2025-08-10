@@ -83,10 +83,10 @@ export default function AboutPage() {
                   <p className="text-purple-700 dark:text-purple-300 font-bold mb-2">{member.role}</p>
                   <p className="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-semibold">{member.bio}</p>
                   <div className="flex gap-3 mt-4">
-                    <a href={member.linkedin} className="text-gray-500 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-300">
+                    <a href={member.linkedin} className="text-gray-500 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-300" target='blank'>
                       <Linkedin className="w-5 h-5" />
                     </a>
-                    <a href={member.twitter} className="text-gray-500 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-300">
+                    <a href={member.twitter} className="text-gray-500 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-300" target='blank'>
                       <Twitter className="w-5 h-5" />
                     </a>
                   </div>
@@ -155,7 +155,7 @@ export default function AboutPage() {
             <p className="text-base sm:text-lg lg:text-xl text-gray-700 dark:text-gray-200 mb-6 sm:mb-8 font-semibold">
               Let’s build something bold with Web Dev, Design, and SEO.
             </p>
-            <Button className="gradient-bg text-white hover:opacity-90 transition-all duration-300">
+            <Button className="gradient-bg text-white dark:text-gray-900 bg-gray-700 dark:bg-gray-200 dark:hover:bg-gray-400 hover:bg-gray-600 transition-all duration-300">
               Start Your Project
             </Button>
           </div>

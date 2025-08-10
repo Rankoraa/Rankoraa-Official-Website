@@ -72,7 +72,7 @@ export default function ServicesPage() {
       <section className="py-8 sm:py-10 md:py-12 lg:py-16 bg-gradient-to-br from-purple-50 to-blue-50">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 dark:text-slate-900">
               Our <span className="gradient-text">Services</span>
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed">
@@ -102,7 +102,7 @@ export default function ServicesPage() {
                     {service.title}
                   </h3>
                   
-                  <p className="text-gray-600 mb-5 sm:mb-6 leading-relaxed text-sm sm:text-base">
+                  <p className="text-gray-600 dark:text-slate-200 mb-5 sm:mb-6 leading-relaxed text-sm sm:text-base">
                     {service.description}
                   </p>
                   
@@ -110,12 +110,12 @@ export default function ServicesPage() {
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center gap-3">
                         <Check className={`w-5 h-5 ${service.color} flex-shrink-0`} />
-                        <span className="text-gray-700 text-sm sm:text-base">{feature}</span>
+                        <span className="text-black dark:text-slate-200 text-sm sm:text-base">{feature}</span>
                       </li>
                     ))}
                   </ul>
                   
-                  <Button className="w-full gradient-bg text-white hover:opacity-90 transition-all duration-300">
+                  <Button className="w-full gradient-bg text-white bg-slate-900 hover:bg-slate-700 dark:text-black dark:bg-slate-100 dark:hover:bg-slate-300 transition-all duration-300">
                     Learn More
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
@@ -137,7 +137,7 @@ export default function ServicesPage() {
               Let's discuss your project and create something amazing together. 
               Get a free consultation and quote today.
             </p>
-            <Button size="lg" className="gradient-bg text-white hover:opacity-90 transition-all duration-300">
+            <Button size="lg" className="gradient-bg text-slate-900 bg-slate-200 hover:bg-slate-300 hover:opacity-90 transition-all duration-300">
               Get Free Quote
             </Button>
           </div>

@@ -13,18 +13,18 @@ export default function Footer() {
               Mumbai, IN based IT services agency crafting high-performance websites and SEO-first experiences.
             </p>
             <div className="flex space-x-3">
-              <div className="neomorphic-button p-2.5 rounded-full hover-glow cursor-pointer">
+              <a className="neomorphic-button p-2.5 rounded-full hover-glow cursor-pointer">
                 <Facebook className="w-5 h-5 text-purple-600 dark:text-purple-300" />
-              </div>
-              <div className="neomorphic-button p-2.5 rounded-full hover-glow cursor-pointer">
+              </a>
+              <a className="neomorphic-button p-2.5 rounded-full hover-glow cursor-pointer">
                 <Twitter className="w-5 h-5 text-purple-600 dark:text-purple-300" />
-              </div>
-              <div className="neomorphic-button p-2.5 rounded-full hover-glow cursor-pointer">
+              </a>
+              <a className="neomorphic-button p-2.5 rounded-full hover-glow cursor-pointer">
                 <Instagram className="w-5 h-5 text-purple-600 dark:text-purple-300" />
-              </div>
-              <div className="neomorphic-button p-2.5 rounded-full hover-glow cursor-pointer">
+              </a>
+              <a href="https://www.linkedin.com/in/rankoraa-india-6669a0379/" target='blank' className="neomorphic-button p-2.5 rounded-full hover-glow cursor-pointer">
                 <Linkedin className="w-5 h-5 text-purple-600 dark:text-purple-300" />
-              </div>
+              </a>
             </div>
           </div>
 
