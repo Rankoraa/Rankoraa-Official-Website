@@ -5,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { Mail, Phone, MapPin, Clock, CheckCircle } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock, CheckCircle, Link } from 'lucide-react'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
@@ -90,7 +90,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-base sm:text-lg font-extrabold">Email</h3>
-                      <p className="text-gray-700 dark:text-gray-200">hello@rankoraa.in</p>
+                      <p className="text-gray-700 dark:text-gray-200">info@rankoraa.com</p>
                       <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">We usually reply within 24 hours</p>
                     </div>
                   </div>
@@ -101,7 +101,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-base sm:text-lg font-extrabold">Phone</h3>
-                      <p className="text-gray-700 dark:text-gray-200">+91 98330 12345</p>
+                      <p className="text-gray-700 dark:text-gray-200">+91 7582093554</p>
                       <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Mon–Fri, 10 AM–6 PM IST</p>
                     </div>
                   </div>
@@ -135,8 +135,14 @@ export default function ContactPage() {
                     <p className="text-gray-700 dark:text-gray-200 mb-3 sm:mb-4 text-sm sm:text-base font-semibold">
                       Schedule a free 30-minute consultation to discuss your project in detail.
                     </p>
-                    <Button className="gradient-bg text-white hover:opacity-90 transition-all duration-300">
-                      Schedule a Call
+                    <Button asChild={true}>
+                      <a
+                        href="https://calendly.com/rankoraa-info/30min"
+                        target="_blank"
+                        className="gradient-bg bg-orange-900/30 dark:bg-slate-100/30 hover:opacity-90 transition-all duration-300"
+                      >
+                        Schedule a Call
+                      </a>
                     </Button>
                   </CardContent>
                 </Card>

@@ -48,6 +48,7 @@ export default function Footer() {
               <p className="text-gray-600 dark:text-gray-300">Web Design</p>
               <p className="text-gray-600 dark:text-gray-300">SEO & Growth</p>
               <p className="text-gray-600 dark:text-gray-300">WooCommerce</p>
+              <p className="text-gray-600 dark:text-gray-300">Shopify</p>
               <p className="text-gray-600 dark:text-gray-300">Maintenance & Care</p>
             </div>
           </div>
@@ -58,11 +59,11 @@ export default function Footer() {
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-purple-600 dark:text-purple-300" />
-                <span className="text-gray-600 dark:text-gray-300">hello@rankoraa.in</span>
+                <span className="text-gray-600 dark:text-gray-300">info@rankoraa.com</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-purple-600 dark:text-purple-300" />
-                <span className="text-gray-600 dark:text-gray-300">+91 98330 12345</span>
+                <span className="text-gray-600 dark:text-gray-300">+91 7582093554</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4 text-purple-600 dark:text-purple-300" />

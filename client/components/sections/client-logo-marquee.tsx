@@ -3,12 +3,15 @@
 import Image from 'next/image'
 
 const clients = [
-  { name: 'TechCorp', logo: '/abstract-tech-logo.png' },
-  { name: 'StartupXYZ', logo: '/abstract-startup-logo.png' },
-  { name: 'E-Commerce Plus', logo: '/ecommerce-logo.png' },
-  { name: 'Creative Agency', logo: '/creative-agency-logo.png' },
-  { name: 'Local Business', logo: '/local-business-logo.png' },
-  { name: 'Global Brand', logo: '/global-brand-logo.png' },
+  { name: 'Google', logo: '/Google-Logo.wine.svg' },
+  { name: 'Wordpress', logo: '/wordpress-ar21.svg' },
+  { name: 'Woocommerce', logo: '/Woocommerce--Streamline-Svg-Logos.svg' },
+  { name: 'Shopify', logo: '/Shopify_logo_2018.svg' },
+  { name: 'Yoast SEO', logo: '/Yoast_idmGkMosKx_0.svg' },
+  { name: 'React', logo: '/reactjs-ar21.svg' },
+  { name: 'Node.Js', logo: '/Node.js_logo_2015.svg' },
+  { name: 'AWS', logo: '/Amazon_Web_Services_Logo.svg' },
+  { name: 'Oracle Cloud', logo: '/Oracle_Cloud_Platform-Logo.wine.svg' },
 ]
 
 export default function ClientLogoMarquee() {

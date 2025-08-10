@@ -5,22 +5,21 @@ import Image from 'next/image'
 
 const teamMembers = [
   {
-    name: 'Alex Thompson',
-    role: 'Founder & Lead Developer',
+    name: 'Somil Athole',
+    role: 'Co-Founder & Lead Developer',
     bio: 'Full-stack engineer building fast, SEO-first web applications for ambitious brands.',
     image: '/professional-developer-headshot.png',
-    linkedin: '#',
-    twitter: '#',
+    linkedin: 'http://linkedin.com/in/somil-athole-39915a15a/',
+    twitter: 'https://x.com/somil_athole',
   },
   {
-    name: 'Sarah Martinez',
-    role: 'UI/UX Designer',
+    name: 'Mayank Padhi',
+    role: 'Co-Founder & Lead Developer',
     bio: 'Designs bold, conversion-focused interfaces for modern web products.',
     image: '/professional-designer-headshot.png',
-    linkedin: '#',
-    twitter: '#',
+    linkedin: 'http://linkedin.com/in/somil-athole-39915a15a/',
+    twitter: 'https://x.com/mayankpadhi2',
   },
-  // Removed 2 cards as requested
 ]
 
 const stats = [
@@ -116,7 +115,7 @@ export default function AboutPage() {
       </section>
 
       {/* Journey */}
-      <section className="pt-8 pb-10 sm:pt-10 sm:pb-12 md:pt-12 md:pb-16">
+      {/* <section className="pt-8 pb-10 sm:pt-10 sm:pb-12 md:pt-12 md:pb-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-10 md:mb-12">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4" style={{ fontFamily: 'var(--font-display), var(--font-body)' }}>
@@ -146,7 +145,7 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
       <section className="pt-8 pb-12 sm:pt-10 sm:pb-14 md:pt-12 md:pb-16 text-center">

@@ -48,9 +48,11 @@ export default function Header() {
               </Link>
             ))}
             <ThemeToggle />
-            <Button className="neomorphic-button px-5 py-2.5 rounded-2xl text-purple-700 dark:text-purple-200 hover:opacity-90">
-              Get Free Quote
-            </Button>
+            <Link href="https://calendly.com/rankoraa-info/30min" target='blank'>
+              <Button className="neomorphic-button px-5 py-2.5 rounded-2xl text-purple-700 dark:text-purple-200 hover:opacity-90">
+                Get In Touch
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
