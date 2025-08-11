@@ -17,7 +17,7 @@ const teamMembers = [
     role: 'Co-Founder & Lead Developer',
     bio: 'Designs bold, conversion-focused interfaces for modern web products.',
     image: '/professional-designer-headshot.png',
-    linkedin: 'http://linkedin.com/in/somil-athole-39915a15a/',
+    linkedin: 'https://www.linkedin.com/in/mayank-padhi/',
     twitter: 'https://x.com/mayankpadhi2',
   },
 ]
