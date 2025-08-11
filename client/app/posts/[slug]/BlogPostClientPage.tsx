@@ -60,7 +60,7 @@ export default function BlogPostClientPage({
       {/* Hero Section */}
       <section className="py-8 sm:py-12 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-[#0b0b0f] dark:via-slate-900 dark:to-black">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className=" mx-auto">
             {/* Categories */}
             <div className="flex flex-wrap gap-2 mb-4">
               {post.categories.map((category) => (
@@ -104,7 +104,7 @@ export default function BlogPostClientPage({
       {/* Featured Image */}
       <section className="py-8">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className=" mx-auto">
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
               <Image
                 src={post.featuredImage || "/placeholder.svg"}
@@ -122,7 +122,7 @@ export default function BlogPostClientPage({
       {/* Article Content */}
       <article className="py-8 sm:py-12">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className=" mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12">
               {/* Main Content */}
               <div className="lg:col-span-3">
