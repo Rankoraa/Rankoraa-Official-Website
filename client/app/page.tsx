@@ -5,6 +5,7 @@ import BlogTeaser from '@/components/sections/BlogTeaser'
 import Testimonials from '@/components/sections/Testimonials'
 import ParallaxWrapper from '@/components/ParallaxWrapper'
 import MouseFollower from '@/components/MouseFollower'
+import Stats from '@/components/sections/Stats_Home'
 
 export default function Home() {
   return (
@@ -14,10 +15,13 @@ export default function Home() {
       <ParallaxWrapper speed={0.3}>
         <ServicesPreview />
       </ParallaxWrapper>
-      <ParallaxWrapper speed={0.2}>
+      <ParallaxWrapper speed={0.1}>
+        <Stats />
+      </ParallaxWrapper>
+      <ParallaxWrapper speed={0.3}>
         <ClientLogoMarquee />
       </ParallaxWrapper>
-      <ParallaxWrapper speed={0.4}>
+      <ParallaxWrapper speed={0.3}>
         <BlogTeaser />
       </ParallaxWrapper>
       <ParallaxWrapper speed={0.1}>
