@@ -1,0 +1,32 @@
+import Hero from '@/components/sections/Hero'
+import ServicesPreview from '@/components/sections/ServicesPreview'
+import ClientLogoMarquee from '@/components/sections/client-logo-marquee'
+import BlogTeaser from '@/components/sections/BlogTeaser'
+import Testimonials from '@/components/sections/Testimonials'
+import ParallaxWrapper from '@/components/ParallaxWrapper'
+import MouseFollower from '@/components/MouseFollower'
+import Stats from '@/components/sections/Stats_Home'
+
+export default function Home() {
+  return (
+    <div className="pt-16 relative">
+      <MouseFollower />
+      <Hero />
+      <ParallaxWrapper speed={0.3}>
+        <ServicesPreview />
+      </ParallaxWrapper>
+      <ParallaxWrapper speed={0.1}>
+        <Stats />
+      </ParallaxWrapper>
+      <ParallaxWrapper speed={0.3}>
+        <ClientLogoMarquee />
+      </ParallaxWrapper>
+      <ParallaxWrapper speed={0.3}>
+        <BlogTeaser />
+      </ParallaxWrapper>
+      <ParallaxWrapper speed={0.1}>
+        <Testimonials />
+      </ParallaxWrapper>
+    </div>
+  )
+}

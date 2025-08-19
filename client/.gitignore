@@ -1,0 +1,9 @@
+# Next.js build output
+.next/
+out/
+
+# dependencies
+node_modules/
+
+# Mac artifacts
+.DS_Store
